@@ -9,8 +9,36 @@
     {
       "name": "User Register",
       "request": {
-        "method": "GET",
-        "header": []
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Test User\",\r\n  \"email\": \"testuser@example.com\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"user\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
       },
       "response": [
         {
@@ -92,8 +120,36 @@
     {
       "name": "User Login",
       "request": {
-        "method": "GET",
-        "header": []
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"testuser@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
       },
       "response": [
         {
@@ -175,8 +231,35 @@
     {
       "name": "Add Task",
       "request": {
-        "method": "GET",
-        "header": []
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTg3YTRmYzQ4NzAwMzhkYTllOGIzMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc2ODQzNDI0LCJleHAiOjE3Nzk0MzU0MjR9.omOUCY487WkLut7daVkedr8XqD8mc45AwTW-n4lrmgU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"title\": \"Buy groceries\", \"description\": \"Milk and eggs\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
       },
       "response": [
         {
@@ -258,7 +341,25 @@
       "name": "Get  all tasks",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTg3YTRmYzQ4NzAwMzhkYTllOGIzMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc2ODQzNDI0LCJleHAiOjE3Nzk0MzU0MjR9.omOUCY487WkLut7daVkedr8XqD8mc45AwTW-n4lrmgU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
       },
       "response": [
         {
@@ -330,8 +431,36 @@
     {
       "name": "Update Task",
       "request": {
-        "method": "GET",
-        "header": []
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTg3YTRmYzQ4NzAwMzhkYTllOGIzMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc2ODQzNDI0LCJleHAiOjE3Nzk0MzU0MjR9.omOUCY487WkLut7daVkedr8XqD8mc45AwTW-n4lrmgU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"status\": \"in-progress\",\r\n  \"description\": \"Milk, eggs, and bread\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/tasks/69e87b97c4870038da9e8b34",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks",
+            "69e87b97c4870038da9e8b34"
+          ]
+        }
       },
       "response": [
         {
@@ -413,8 +542,27 @@
     {
       "name": "Delete Task",
       "request": {
-        "method": "GET",
-        "header": []
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTg3YTRmYzQ4NzAwMzhkYTllOGIzMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc2ODQzNDI0LCJleHAiOjE3Nzk0MzU0MjR9.omOUCY487WkLut7daVkedr8XqD8mc45AwTW-n4lrmgU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks/69e87b97c4870038da9e8b34",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks",
+            "69e87b97c4870038da9e8b34"
+          ]
+        }
       },
       "response": [
         {
@@ -481,6 +629,293 @@
           ],
           "cookie": [],
           "body": "{\n    \"id\": \"69e87b97c4870038da9e8b34\",\n    \"message\": \"Task deleted successfully\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Admin Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Admin Boss\",\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"admin\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/v1/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "admin",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Admin Boss\",\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/v1/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "299"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"12b-SwyV/Dax11pnfnr4A6mE9p2s3ms\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Apr 2026 18:03:13 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"_id\": \"69e90d61460958fd955ae1d3\",\n    \"name\": \"Admin Boss\",\n    \"email\": \"admin@example.com\",\n    \"role\": \"admin\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTkwZDYxNDYwOTU4ZmQ5NTVhZTFkMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3Njg4MDk5MywiZXhwIjoxNzc5NDcyOTkzfQ.C_PLQJM8bQ5e83BULxxkgkUYvTn3fOvgeI2D5VBZrus\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "The Success Test",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTkwZDYxNDYwOTU4ZmQ5NTVhZTFkMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3Njg4MDk5MywiZXhwIjoxNzc5NDcyOTkzfQ.C_PLQJM8bQ5e83BULxxkgkUYvTn3fOvgeI2D5VBZrus",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/v1/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "v1",
+            "users"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Admin Acess",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTkwZDYxNDYwOTU4ZmQ5NTVhZTFkMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3Njg4MDk5MywiZXhwIjoxNzc5NDcyOTkzfQ.C_PLQJM8bQ5e83BULxxkgkUYvTn3fOvgeI2D5VBZrus",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/v1/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "548"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"224-PcTnWXAK79p8FO5z8DgscsazAsE\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Apr 2026 18:05:42 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"_id\": \"69e87a4fc4870038da9e8b33\",\n        \"name\": \"Test User\",\n        \"email\": \"testuser@example.com\",\n        \"role\": \"user\",\n        \"createdAt\": \"2026-04-22T07:35:43.588Z\",\n        \"updatedAt\": \"2026-04-22T07:35:43.588Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"69e899bb9f99b18f2769de21\",\n        \"name\": \"User1\",\n        \"email\": \"user1@example.com\",\n        \"role\": \"user\",\n        \"createdAt\": \"2026-04-22T09:49:47.900Z\",\n        \"updatedAt\": \"2026-04-22T09:49:47.900Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"69e90d61460958fd955ae1d3\",\n        \"name\": \"Admin Boss\",\n        \"email\": \"admin@example.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2026-04-22T18:03:13.067Z\",\n        \"updatedAt\": \"2026-04-22T18:03:13.067Z\",\n        \"__v\": 0\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "The Rejection Test",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTg3YTRmYzQ4NzAwMzhkYTllOGIzMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc2ODQzNDI0LCJleHAiOjE3Nzk0MzU0MjR9.omOUCY487WkLut7daVkedr8XqD8mc45AwTW-n4lrmgU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/v1/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "v1",
+            "users"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "User Acess",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTg3YTRmYzQ4NzAwMzhkYTllOGIzMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc2ODQzNDI0LCJleHAiOjE3Nzk0MzU0MjR9.omOUCY487WkLut7daVkedr8XqD8mc45AwTW-n4lrmgU",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/v1/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "40"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"28-kH04QHES0IjVawrGSN7tFPI1nJE\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Apr 2026 18:08:12 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Not authorized as an admin\"\n}"
         }
       ]
     }
