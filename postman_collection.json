@@ -1,122 +1,488 @@
 {
   "info": {
-    "_postman_id": "17401fc0-d92c-4f18-b511-11b1b982ff9c",
-    "name": "Intern Assignment API",
+    "_postman_id": "20dbe9a6-4056-4351-9b4f-4050ed68f1ca",
+    "name": "Intern API Endpoints",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "40595309"
   },
   "item": [
     {
-      "name": "http://localhost:5000/api/tasks",
+      "name": "User Register",
       "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "type": "text"
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "name": "register",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Test User\",\r\n  \"email\": \"testuser@example.com\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"user\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
           },
-          {
-            "key": "Authorization",
-            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTdkOTkxYjEzOTVjYmE1NzI3ZWRlNiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc2ODAyMjUwLCJleHAiOjE3NzkzOTQyNTB9.nvC3r9YCveIYhkKSoZuImnPXsEjIGFFqYlwXRJhnMes",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{ \"title\": \"Buy groceries\", \"description\": \"Milk and eggs\" }",
-          "options": {
-            "raw": {
-              "language": "json"
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "298"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"12a-8Pf1TkLy4bSm4/QcUa8pn0ppwKY\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Apr 2026 07:35:43 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
             }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:5000/api/tasks",
-          "protocol": "http",
-          "host": [
-            "localhost"
           ],
-          "port": "5000",
-          "path": [
-            "api",
-            "tasks"
-          ]
+          "cookie": [],
+          "body": "{\n    \"_id\": \"69e87a4fc4870038da9e8b33\",\n    \"name\": \"Test User\",\n    \"email\": \"testuser@example.com\",\n    \"role\": \"user\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTg3YTRmYzQ4NzAwMzhkYTllOGIzMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc2ODQzMzQzLCJleHAiOjE3Nzk0MzUzNDN9.2xXLiC0bU7wQ_aa9jr_0ZdPAeR9Cz1L29SOltlYDMhk\"\n}"
         }
-      },
-      "response": []
+      ]
     },
     {
-      "name": "http://localhost:5000/api/auth/login",
+      "name": "User Login",
       "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"email\": \"testuser@example.com\",\r\n  \"password\": \"password123\"\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:5000/api/auth/login",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "5000",
-          "path": [
-            "api",
-            "auth",
-            "login"
-          ]
-        }
+        "method": "GET",
+        "header": []
       },
-      "response": []
+      "response": [
+        {
+          "name": "login",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"testuser@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "298"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"12a-42RKdcVXO7Jpq3/MYte9Db0rcYs\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Apr 2026 07:37:04 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"_id\": \"69e87a4fc4870038da9e8b33\",\n    \"name\": \"Test User\",\n    \"email\": \"testuser@example.com\",\n    \"role\": \"user\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTg3YTRmYzQ4NzAwMzhkYTllOGIzMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc2ODQzNDI0LCJleHAiOjE3Nzk0MzU0MjR9.omOUCY487WkLut7daVkedr8XqD8mc45AwTW-n4lrmgU\"\n}"
+        }
+      ]
     },
     {
-      "name": "http://localhost:5000/api/auth/register",
+      "name": "Add Task",
       "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"name\": \"Test User\",\r\n  \"email\": \"testuser@example.com\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"user\"\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:5000/api/auth/register",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "5000",
-          "path": [
-            "api",
-            "auth",
-            "register"
-          ]
-        }
+        "method": "GET",
+        "header": []
       },
-      "response": []
+      "response": [
+        {
+          "name": "task added",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTg3YTRmYzQ4NzAwMzhkYTllOGIzMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc2ODQzNDI0LCJleHAiOjE3Nzk0MzU0MjR9.omOUCY487WkLut7daVkedr8XqD8mc45AwTW-n4lrmgU",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"title\": \"Buy groceries\", \"description\": \"Milk and eggs\" }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/tasks",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "tasks"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "227"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"e3-iRzH9USng3wqX2iWufzK4q/1vYc\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Apr 2026 07:41:11 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"user\": \"69e87a4fc4870038da9e8b33\",\n    \"title\": \"Buy groceries\",\n    \"description\": \"Milk and eggs\",\n    \"status\": \"pending\",\n    \"_id\": \"69e87b97c4870038da9e8b34\",\n    \"createdAt\": \"2026-04-22T07:41:11.524Z\",\n    \"updatedAt\": \"2026-04-22T07:41:11.524Z\",\n    \"__v\": 0\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get  all tasks",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "name": "all tasks",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTg3YTRmYzQ4NzAwMzhkYTllOGIzMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc2ODQzNDI0LCJleHAiOjE3Nzk0MzU0MjR9.omOUCY487WkLut7daVkedr8XqD8mc45AwTW-n4lrmgU",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/tasks",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "tasks"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "229"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"e5-V726H6ZR/8dmNh691yJYzaNeC8I\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Apr 2026 07:42:49 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"_id\": \"69e87b97c4870038da9e8b34\",\n        \"user\": \"69e87a4fc4870038da9e8b33\",\n        \"title\": \"Buy groceries\",\n        \"description\": \"Milk and eggs\",\n        \"status\": \"pending\",\n        \"createdAt\": \"2026-04-22T07:41:11.524Z\",\n        \"updatedAt\": \"2026-04-22T07:41:11.524Z\",\n        \"__v\": 0\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "name": "task updated",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTg3YTRmYzQ4NzAwMzhkYTllOGIzMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc2ODQzNDI0LCJleHAiOjE3Nzk0MzU0MjR9.omOUCY487WkLut7daVkedr8XqD8mc45AwTW-n4lrmgU",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"status\": \"in-progress\",\r\n  \"description\": \"Milk, eggs, and bread\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/tasks/69e87b97c4870038da9e8b34",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "tasks",
+                "69e87b97c4870038da9e8b34"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "239"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"ef-mh+1u4HU71fXG4Uuutt+LwYz0NU\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Apr 2026 07:45:03 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"_id\": \"69e87b97c4870038da9e8b34\",\n    \"user\": \"69e87a4fc4870038da9e8b33\",\n    \"title\": \"Buy groceries\",\n    \"description\": \"Milk, eggs, and bread\",\n    \"status\": \"in-progress\",\n    \"createdAt\": \"2026-04-22T07:41:11.524Z\",\n    \"updatedAt\": \"2026-04-22T07:45:03.632Z\",\n    \"__v\": 0\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete Task",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "name": "task deleted",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTg3YTRmYzQ4NzAwMzhkYTllOGIzMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc2ODQzNDI0LCJleHAiOjE3Nzk0MzU0MjR9.omOUCY487WkLut7daVkedr8XqD8mc45AwTW-n4lrmgU",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/tasks/69e87b97c4870038da9e8b34",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "tasks",
+                "69e87b97c4870038da9e8b34"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "71"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"47-53yNKuVU/WkhWzmepZ206V83QYs\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Apr 2026 07:46:38 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"69e87b97c4870038da9e8b34\",\n    \"message\": \"Task deleted successfully\"\n}"
+        }
+      ]
     }
   ]
 }
